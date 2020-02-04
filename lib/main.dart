@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Among Abdi Praja',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       fontFamily: 'Nunito',
       ),
       home: LoginPage(),
