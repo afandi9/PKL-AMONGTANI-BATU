@@ -56,7 +56,36 @@ class _BottomNavPageState extends State{
         ),
       ),
       Container(child: Text('Halaman Inbox'),),
-      Container(child: Text('Halaman Layanan'),),
+      Container(
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: const Text("Ajukan Cuti",textAlign: TextAlign.center),
+              color: Colors.green,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: const Text("Kenaikan Pangkat",textAlign: TextAlign.center,),
+              color: Colors.green,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: const Text("Kenaikan Gaji",textAlign: TextAlign.center),
+              color: Colors.green,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: const Text("Tracking Process",textAlign: TextAlign.center),
+              color: Colors.green,
+            )
+          ],),),
 //      Text('Halaman Inbox'),
 //      Text('Halaman Layanan'),
     ];
