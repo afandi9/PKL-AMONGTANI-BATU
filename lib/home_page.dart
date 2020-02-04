@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:among_tani/service_page.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    title: "My Apps",
+    home: new HomePage(),
+  ));
+}
 
 class HomePage extends StatefulWidget {
   static String tag = 'BottomNavPage';
@@ -6,7 +14,7 @@ class HomePage extends StatefulWidget {
   _BottomNavPageState createState() => _BottomNavPageState();
 }
 
-class _BottomNavPageState extends State<HomePage>{
+class _BottomNavPageState extends State{
   int _selectTabIndex = 0;
 
   void _onNavBarTapped(int index){
@@ -14,7 +22,11 @@ class _BottomNavPageState extends State<HomePage>{
       _selectTabIndex = index;
     });
   }
-
+  final _widgetOptions = [
+    HomePage(),
+    ServicePage(),
+    ServicePage(),
+  ];
   @override
   Widget build(BuildContext context){
     final _listPage = <Widget>[
@@ -46,6 +58,7 @@ class _BottomNavPageState extends State<HomePage>{
       unselectedItemColor: Colors.grey,
       onTap: _onNavBarTapped,
     );
+
 
     return Scaffold(
       appBar: PreferredSize(
@@ -90,7 +103,7 @@ class _BottomNavPageState extends State<HomePage>{
         ),
       ),
       body: Center(
-        child: _listPage[_selectTabIndex],
+          child: _listPage[_selectTabIndex]
       ),
       bottomNavigationBar: _bottomNavBar,
     );
