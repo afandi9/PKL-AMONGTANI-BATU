@@ -16,10 +16,20 @@ class HomePage extends StatefulWidget {
 
 class _BottomNavPageState extends State{
   int _selectTabIndex = 0;
+  String _title = 'HOME';
 
   void _onNavBarTapped(int index){
     setState(() {
       _selectTabIndex = index;
+      if (index == 0){
+        _title = 'HOME';
+      }
+      if (index == 1){
+        _title = 'INBOX';
+      }
+      if (index == 2){
+        _title = 'LAYANAN';
+      }
     });
   }
 
@@ -113,7 +123,7 @@ class _BottomNavPageState extends State{
                       child: Image.asset('assets/logo.png', fit: BoxFit.contain, height: 40,alignment: Alignment.centerLeft,),
                     ),
                     Expanded(
-                      child: Text("AMONG ABDI",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.center,),
+                      child: Text(_title,style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.center,),
                     ),
                     Expanded(
                       child: Icon(Icons.home, color: Colors.transparent),
