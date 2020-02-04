@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
@@ -74,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             logo,
             SizedBox(height: 12.0),
-            Text('AMONG ABDI PRAJA\nKOTA BATU', style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.green[600]),textAlign: TextAlign.center,),
+            Text('AMONG ABDI PRAJA\nKOTA BATU', style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.green[700]),textAlign: TextAlign.center,),
             SizedBox(height: 48.0),
             email,
             SizedBox(height: 8.0),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -104,7 +103,7 @@ class _BottomNavPageState extends State<HomePage>{
                       child: Image.asset('assets/logo.png', fit: BoxFit.contain, height: 40,alignment: Alignment.centerLeft,),
                     ),
                     Expanded(
-                      child: Text("AMONG ABDI",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[900]),textAlign: TextAlign.center,),
+                      child: Text("AMONG ABDI",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.center,),
                     ),
                     Expanded(
                       child: Icon(Icons.home, color: Colors.transparent),
