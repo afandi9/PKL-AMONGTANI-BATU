@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/service_page.dart';
 
@@ -30,9 +31,35 @@ class _BottomNavPageState extends State{
   @override
   Widget build(BuildContext context){
     final _listPage = <Widget>[
-      Text('Halaman Home'),
-      Text('Halaman Inbox'),
-      Text('Halaman Layanan'),
+//      Text('Halaman Home'),
+      Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: 40),
+            CircleAvatar(
+              radius: 50,
+              child: Image.asset('assets/logo.png'),
+            ),
+            SizedBox(height: 20),
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text('Nama : Imam Haris Afandi'),
+                  SizedBox(height: 10),
+                  Text('NIP     : 12345678')
+                ],
+              ),
+            ),
+            ],
+        ),
+      ),
+      Container(child: Text('Halaman Inbox'),),
+      Container(child: Text('Halaman Layanan'),),
+//      Text('Halaman Inbox'),
+//      Text('Halaman Layanan'),
     ];
 
 
@@ -54,7 +81,7 @@ class _BottomNavPageState extends State{
     final _bottomNavBar = BottomNavigationBar(
       items: _bottomNavBarItems,
       currentIndex: _selectTabIndex,
-      selectedItemColor: Colors.green,
+      selectedItemColor: Colors.teal,
       unselectedItemColor: Colors.grey,
       onTap: _onNavBarTapped,
     );
@@ -90,7 +117,7 @@ class _BottomNavPageState extends State{
                       child: Image.asset('assets/logo.png', fit: BoxFit.contain, height: 40,alignment: Alignment.centerLeft,),
                     ),
                     Expanded(
-                      child: Text("AMONG ABDI",style: TextStyle(fontSize: 15,color: Colors.green),textAlign: TextAlign.center,),
+                      child: Text("AMONG ABDI",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[900]),textAlign: TextAlign.center,),
                     ),
                     Expanded(
                       child: Icon(Icons.home, color: Colors.transparent),
