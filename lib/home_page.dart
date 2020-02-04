@@ -22,11 +22,7 @@ class _BottomNavPageState extends State{
       _selectTabIndex = index;
     });
   }
-  final _widgetOptions = [
-    HomePage(),
-    ServicePage(),
-    ServicePage(),
-  ];
+
   @override
   Widget build(BuildContext context){
     final _listPage = <Widget>[
@@ -56,7 +52,8 @@ class _BottomNavPageState extends State{
         ),
       ),
       Container(child: Text('Halaman Inbox'),),
-      Container(child: Text('Halaman Layanan'),),
+      ServicePage(),
+      //Container(child: Text('Halaman Layanan'),),
 //      Text('Halaman Inbox'),
 //      Text('Halaman Layanan'),
     ];
