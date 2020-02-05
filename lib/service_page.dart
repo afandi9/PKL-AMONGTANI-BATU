@@ -40,9 +40,9 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                    mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.flight_takeoff,size: 77,color: Colors.white,),
+                  new Icon(Icons.flight_takeoff,size: 60,color: Colors.white,),
 
-                  new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                  new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),),
                   ],
               ),
             ),
@@ -53,9 +53,9 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.accessibility_new,size: 77,color: Colors.white,),
+                  new Icon(Icons.accessibility_new,size: 60,color: Colors.white,),
 
-                  new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                  new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 15,),),
                 ],
               ),
             ),
@@ -65,9 +65,9 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.trending_up,size: 77,color: Colors.white,),
+                  new Icon(Icons.trending_up,size: 60,color: Colors.white,),
 
-                  new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                  new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 15,),),
                 ],
               ),
             ),
@@ -77,9 +77,9 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.navigation,size: 77,color: Colors.white,),
+                  new Icon(Icons.navigation,size: 60,color: Colors.white,),
 
-                  new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                  new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),),
                 ],
               ),
             ),

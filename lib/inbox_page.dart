@@ -71,7 +71,7 @@ class _InboxPage extends State<InboxPage> {
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     color: Colors.black,
-                                    fontSize: 20.0
+                                    fontSize: 15.0
                                   ),
                                 )
                               ],
