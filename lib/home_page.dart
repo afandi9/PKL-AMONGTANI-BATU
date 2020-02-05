@@ -1,5 +1,7 @@
 
 
+import 'dart:io';
+
 import 'package:among_tani/inbox_page.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/service_page.dart';
@@ -18,6 +20,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _BottomNavPageState extends State{
+  Future<bool> _onWillPop() {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Are you sure?'),
+        content: Text('Do you want to exit an App'),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text('No'),
+          ),
+          FlatButton(
+            onPressed: () => exit(0),
+            /*Navigator.of(context).pop(true)*/
+            child: Text('Yes'),
+          ),
+        ],
+      ),
+    ) ??
+        false;
+  }
   int _selectTabIndex = 0;
   String _title = 'HOME';
 
@@ -39,7 +62,7 @@ class _BottomNavPageState extends State{
   @override
   Widget build(BuildContext context){
     final _listPage = <Widget>[
-//      Text('Halaman Home'),
+
       Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,11 +119,20 @@ class _BottomNavPageState extends State{
       onTap: _onNavBarTapped,
     );
 
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: _onWillPop,
+
+
+    child: Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(null, 50),
         child: Container(
           decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.green,Colors.white],
+            ),
               boxShadow: [BoxShadow(
                   color: Colors.black12,
                   spreadRadius: 5,
@@ -139,9 +171,19 @@ class _BottomNavPageState extends State{
         ),
       ),
       body: Center(
-          child: _listPage[_selectTabIndex]
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.greenAccent,Colors.white])),
+          child: Center(
+              child: _listPage[_selectTabIndex]
+          ),
+        )
       ),
       bottomNavigationBar: _bottomNavBar,
+    ),
     );
   }
 }

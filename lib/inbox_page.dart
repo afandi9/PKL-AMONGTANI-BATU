@@ -34,7 +34,15 @@ class _InboxPage extends State<InboxPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: ListView.builder(
+      body: Center(
+        child: Container(
+        decoration: BoxDecoration(
+        gradient: LinearGradient(
+        begin: Alignment.bottomRight,
+        end: Alignment.bottomLeft,
+        colors: [Colors.greenAccent,Colors.white])),
+      child :
+      ListView.builder(
           itemCount: InboxGenerator.inboxListLength,
           itemBuilder: (context,i){
             InboxContent inboxContent = InboxGenerator.getInboxContent(i);
@@ -78,6 +86,8 @@ class _InboxPage extends State<InboxPage> {
               Divider(),
             ],);
           }),
+      ),
+      ),
     );
   }
 }

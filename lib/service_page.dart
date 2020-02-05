@@ -21,6 +21,12 @@ class _ServicePage extends State<ServicePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
+        child: Container(
+        decoration: BoxDecoration(
+        gradient: LinearGradient(
+        begin: Alignment.bottomRight,
+        end: Alignment.bottomLeft,
+        colors: [Colors.greenAccent,Colors.white])),
         child: GridView.count(
           primary: false,
           padding: const EdgeInsets.all(20),
@@ -30,42 +36,56 @@ class _ServicePage extends State<ServicePage> {
           children: <Widget>[
             Container(
               padding: const EdgeInsets.all(8),
-              color: Colors.green,
-              child: new Center(
-                   child: Icon(Icons.flight_takeoff,size: 77,color: Colors.white,),
+              color: Colors.green.shade400,
+              child: new Column(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Icon(Icons.flight_takeoff,size: 77,color: Colors.white,),
 
-              )
+                  new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                  ],
+              ),
             ),
 
             Container(
               padding: const EdgeInsets.all(8),
-              child: const Text(
-                "Kenaikan Pangkat",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white,fontSize: 20),
+              color: Colors.green.shade400,
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Icon(Icons.accessibility_new,size: 77,color: Colors.white,),
+
+                  new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                ],
               ),
-              color: Colors.green,
             ),
             Container(
               padding: const EdgeInsets.all(8),
-              child: const Text(
-                "Kenaikan Gaji",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white,fontSize: 20),
+              color: Colors.green.shade400,
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Icon(Icons.trending_up,size: 77,color: Colors.white,),
+
+                  new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                ],
               ),
-              color: Colors.green,
             ),
             Container(
               padding: const EdgeInsets.all(8),
-              child: const Text(
-                "Tracking Process",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white,fontSize: 20),
+              color: Colors.green.shade400,
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Icon(Icons.navigation,size: 77,color: Colors.white,),
+
+                  new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                ],
               ),
-              color: Colors.green,
-            )
+            ),
           ],
         ),
+      ),
       ),
     );
   }
