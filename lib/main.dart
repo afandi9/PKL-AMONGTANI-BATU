@@ -1,5 +1,6 @@
 
 
+import 'package:among_tani/inbox_page.dart';
 import 'package:among_tani/service_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     LoginPage.tag: (context) => LoginPage(),
     HomePage.tag: (context) => HomePage(),
     ServicePage.tag: (context) => ServicePage(),
-
+    InboxPage.tag: (context) => InboxPage(),
   };
   @override
   Widget build(BuildContext context) {

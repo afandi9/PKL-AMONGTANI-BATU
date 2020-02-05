@@ -1,9 +1,12 @@
+
+
+import 'package:among_tani/inbox_page.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/service_page.dart';
 
 void main() {
   runApp(new MaterialApp(
-    title: "My Apps",
+    title: "Among tani",
     home: new HomePage(),
   ));
 }
@@ -61,7 +64,8 @@ class _BottomNavPageState extends State{
             ],
         ),
       ),
-      Container(child: Text('Halaman Inbox'),),
+//      Container(child: Text('Halaman Inbox'),),
+    InboxPage(),
       ServicePage(),
       //Container(child: Text('Halaman Layanan'),),
 //      Text('Halaman Inbox'),
@@ -91,7 +95,6 @@ class _BottomNavPageState extends State{
       unselectedItemColor: Colors.grey,
       onTap: _onNavBarTapped,
     );
-
 
     return Scaffold(
       appBar: PreferredSize(

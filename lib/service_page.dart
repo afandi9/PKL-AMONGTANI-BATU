@@ -5,7 +5,7 @@ import 'home_page.dart';
 void main() {
   runApp(new MaterialApp(
     title: "Layanan",
-    home: new HomePage(),
+    home: new ServicePage(),
   ));
 }
 
@@ -30,19 +30,19 @@ class _ServicePage extends State<ServicePage> {
           children: <Widget>[
             Container(
               padding: const EdgeInsets.all(8),
-              child: const Text(
-                "Ajukan Cuti",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
-              ),
               color: Colors.green,
+              child: new Center(
+                   child: Icon(Icons.flight_takeoff,size: 77,color: Colors.white,),
+
+              )
             ),
+
             Container(
               padding: const EdgeInsets.all(8),
               child: const Text(
                 "Kenaikan Pangkat",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white,fontSize: 20),
               ),
               color: Colors.green,
             ),
@@ -51,7 +51,7 @@ class _ServicePage extends State<ServicePage> {
               child: const Text(
                 "Kenaikan Gaji",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white,fontSize: 20),
               ),
               color: Colors.green,
             ),
@@ -60,7 +60,7 @@ class _ServicePage extends State<ServicePage> {
               child: const Text(
                 "Tracking Process",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white,fontSize: 20),
               ),
               color: Colors.green,
             )
