@@ -1,5 +1,5 @@
-import 'package:among_tani/inbox_page.dart';
-import 'package:among_tani/service_page.dart';
+import 'package:among_tani/fragmentPage/inbox_page.dart';
+import 'package:among_tani/fragmentPage/service_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'home_page.dart';

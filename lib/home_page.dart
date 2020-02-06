@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:among_tani/inbox_page.dart';
+import 'package:among_tani/fragmentPage/inbox_page.dart';
 import 'package:flutter/material.dart';
-import 'package:among_tani/service_page.dart';
+import 'package:among_tani/fragmentPage/service_page.dart';
 
 void main() {
   runApp(new MaterialApp(
