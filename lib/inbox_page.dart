@@ -55,7 +55,7 @@ class _InboxPage extends State<InboxPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                   CircleAvatar(
-                  radius: 35,
+                  radius: 25,
                     child: Image.asset('assets/logo.png'),
             ),
                     Expanded(

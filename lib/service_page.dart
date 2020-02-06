@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
-
 void main() {
   runApp(new MaterialApp(
     title: "Layanan",
@@ -42,7 +40,7 @@ class _ServicePage extends State<ServicePage> {
                 children: <Widget>[
                   new Icon(Icons.flight_takeoff,size: 60,color: Colors.white,),
 
-                  new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),),
+                  new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
                   ],
               ),
             ),
@@ -55,7 +53,7 @@ class _ServicePage extends State<ServicePage> {
                 children: <Widget>[
                   new Icon(Icons.accessibility_new,size: 60,color: Colors.white,),
 
-                  new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 15,),),
+                  new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
                 ],
               ),
             ),
@@ -67,7 +65,7 @@ class _ServicePage extends State<ServicePage> {
                 children: <Widget>[
                   new Icon(Icons.trending_up,size: 60,color: Colors.white,),
 
-                  new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 15,),),
+                  new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
                 ],
               ),
             ),
@@ -79,7 +77,7 @@ class _ServicePage extends State<ServicePage> {
                 children: <Widget>[
                   new Icon(Icons.navigation,size: 60,color: Colors.white,),
 
-                  new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),),
+                  new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
                 ],
               ),
             ),

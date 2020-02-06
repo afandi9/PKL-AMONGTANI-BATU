@@ -1,7 +1,4 @@
-
-
 import 'dart:io';
-
 import 'package:among_tani/inbox_page.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/service_page.dart';
@@ -87,12 +84,8 @@ class _BottomNavPageState extends State{
             ],
         ),
       ),
-//      Container(child: Text('Halaman Inbox'),),
-    InboxPage(),
+      InboxPage(),
       ServicePage(),
-      //Container(child: Text('Halaman Layanan'),),
-//      Text('Halaman Inbox'),
-//      Text('Halaman Layanan'),
     ];
 
 
@@ -144,7 +137,7 @@ class _BottomNavPageState extends State{
           child: ClipRRect(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15)
+                bottomRight: Radius.circular(15),
             ),
             child: Container(
               color: Colors.white70,

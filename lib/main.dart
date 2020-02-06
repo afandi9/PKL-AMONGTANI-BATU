@@ -1,5 +1,3 @@
-
-
 import 'package:among_tani/inbox_page.dart';
 import 'package:among_tani/service_page.dart';
 import 'package:flutter/material.dart';
