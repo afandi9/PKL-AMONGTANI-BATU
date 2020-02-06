@@ -1,3 +1,4 @@
+import 'package:among_tani/fragmentPage/inbox_detail.dart';
 import 'package:among_tani/model/inbox_model.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,11 @@ class _InboxPage extends State<InboxPage> {
         inbox.title,
         style: TextStyle(color: Colors.black, fontSize: 15),
       ),
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) => InboxDetail(inbox: inbox)
+        ));
+      },
     );
 
     Card makeCard(Inbox inbox) => Card(
