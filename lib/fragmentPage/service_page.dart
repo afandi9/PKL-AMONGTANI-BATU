@@ -42,12 +42,6 @@ class _ServicePage extends State<ServicePage> {
                 children: <Widget>[
                   new Icon(Icons.flight_takeoff,size: 60,color: Colors.white,),
                   new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
-                  new RaisedButton(
-                    color: Colors.blue,
-                      child: Text("Pilih"),
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>CutiPage()),);
-                      })
                   ],
               ),
             ),

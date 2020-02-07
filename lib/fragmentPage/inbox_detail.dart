@@ -94,8 +94,6 @@ class InboxDetail extends StatelessWidget{
 //                ),
               ],
             ),
-
-
           ),
         )
       ),
