@@ -1,3 +1,4 @@
+import 'package:among_tani/cuti_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class ServicePage extends StatefulWidget {
 class _ServicePage extends State<ServicePage> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -39,8 +41,13 @@ class _ServicePage extends State<ServicePage> {
                    mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new Icon(Icons.flight_takeoff,size: 60,color: Colors.white,),
-
                   new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                  new RaisedButton(
+                    color: Colors.blue,
+                      child: Text("Pilih"),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>CutiPage()),);
+                      })
                   ],
               ),
             ),
@@ -76,7 +83,6 @@ class _ServicePage extends State<ServicePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new Icon(Icons.navigation,size: 60,color: Colors.white,),
-
                   new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
                 ],
               ),

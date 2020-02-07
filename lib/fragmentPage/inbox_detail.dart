@@ -12,10 +12,9 @@ class InboxDetail extends StatelessWidget{
     Widget setButton(bool setBool){
       if (setBool == true){
         return RaisedButton(
-          onPressed: null,
           color: Colors.teal[700],
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(3),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Text('Download',style: TextStyle(color: Colors.white),),
         );
