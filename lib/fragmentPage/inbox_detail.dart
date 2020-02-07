@@ -36,17 +36,14 @@ class InboxDetail extends StatelessWidget{
               child: Container(
                 margin: EdgeInsets.fromLTRB(10, 25, 10, 0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Expanded(
-                      child: Image.asset('assets/logo.png', fit: BoxFit.contain, height: 40,alignment: Alignment.centerLeft,),
+                    Container(
+                      child: IconButton(icon: Icon(Icons.arrow_back),onPressed: () => Navigator.pop(context, false),alignment: Alignment.centerLeft,color: Colors.green[700],),
                     ),
                     Expanded(
-                      child: Text('INBOX',style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.center,),
-                    ),
-                    Expanded(
-                      child: Icon(Icons.home, color: Colors.transparent),
+                      child: Text(inbox.title.toUpperCase(),style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.left,),
                     ),
                   ],
                 ),
@@ -56,7 +53,35 @@ class InboxDetail extends StatelessWidget{
         ),
       ),
       body: Center(
-        child: Text(inbox.content),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          padding: EdgeInsets.all(10),
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      border: new Border.all(
+                        width: 1.0, color: Colors.green[700],
+                      )
+                  ),
+                  child: Text(inbox.content,textAlign: TextAlign.justify,),),
+                RaisedButton(
+                  onPressed: null,
+                  color: Colors.teal[700],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Text('Download',style: TextStyle(color: Colors.white),),
+                ),
+              ],
+            ),
+
+
+          ),
+        )
       ),
     );
   }}
