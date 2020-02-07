@@ -28,7 +28,7 @@ class _InboxPage extends State<InboxPage> {
   @override
   Widget build(BuildContext context) {
     ListTile makeListTile(Inbox inbox) => ListTile(
-      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      contentPadding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
       leading: Container(
         padding: EdgeInsets.only(right: 12.0),
         decoration: new BoxDecoration(
@@ -89,10 +89,12 @@ List getInbox(){
     Inbox(
       title: "Diterima Operator BKSD",
       content: "Pengajuan Anda telah diterima oleh operator BKSD",
+      download: false,
     ),
     Inbox(
       title: "Pengajuan Sedang Diproses",
-      content: "Pengajuan Anda sedang diproses oleh sistem",
+      content: "Pengajuan Anda sedang diproses sistem",
+      download: true,
     ),
   ];
 }

@@ -7,6 +7,22 @@ class InboxDetail extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    bool buttonDown = inbox.download;
+
+    Widget setButton(bool setBool){
+      if (setBool == true){
+        return RaisedButton(
+          onPressed: null,
+          color: Colors.teal[700],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(3),
+          ),
+          child: Text('Download',style: TextStyle(color: Colors.white),),
+        );
+      }else{
+       return Container();
+      }
+    }
 
     return Scaffold(
       appBar: PreferredSize(
@@ -68,14 +84,15 @@ class InboxDetail extends StatelessWidget{
                       )
                   ),
                   child: Text(inbox.content,textAlign: TextAlign.justify,),),
-                RaisedButton(
-                  onPressed: null,
-                  color: Colors.teal[700],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3),
-                  ),
-                  child: Text('Download',style: TextStyle(color: Colors.white),),
-                ),
+                setButton(buttonDown),
+//                RaisedButton(
+//                  onPressed: null,
+//                  color: Colors.teal[700],
+//                  shape: RoundedRectangleBorder(
+//                    borderRadius: BorderRadius.circular(3),
+//                  ),
+//                  child: Text('Download',style: TextStyle(color: Colors.white),),
+//                ),
               ],
             ),
 
