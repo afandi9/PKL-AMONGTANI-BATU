@@ -1,4 +1,8 @@
 import 'package:among_tani/cuti_page.dart';
+import 'package:among_tani/detailPage/detail_cuti.dart';
+import 'package:among_tani/detailPage/detail_kenaikan_gaji.dart';
+import 'package:among_tani/detailPage/detail_kenaikan_pangkat.dart';
+import 'package:among_tani/detailPage/detail_tracking.dart';
 import 'package:among_tani/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +46,7 @@ class _ServicePage extends State<ServicePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                 new InkWell(
-                  onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailCuti()))),
                   child: Container(height: 80,width: 120,
                     child: new Column(
                       children: <Widget>[
@@ -64,7 +68,7 @@ class _ServicePage extends State<ServicePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new InkWell(
-                    onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                    onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailKenaikanPangkat()))),
                     child: Container(height: 80,width: 120,
                       child: new Column(
                         children: <Widget>[
@@ -84,7 +88,7 @@ class _ServicePage extends State<ServicePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new InkWell(
-                    onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                    onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailKenaikanGaji()))),
                     child: Container(height: 80,width: 120,
                       child: new Column(
                         children: <Widget>[
@@ -104,7 +108,7 @@ class _ServicePage extends State<ServicePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new InkWell(
-                    onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                    onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailTracking()))),
                     child: Container(height: 80,width: 120,
                       child: new Column(
                         children: <Widget>[

@@ -21,8 +21,8 @@ class _BottomNavPageState extends State{
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Opo Awakmu Yakin?'),
-        content: Text('Yakin meninggalkan kekasihmu?'),
+        title: Text('Exit?'),
+        content: Text('Apakah anda yakin ingin keluar?'),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.of(context).pop(false),

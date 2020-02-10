@@ -1,4 +1,4 @@
-import 'package:among_tani/model/form_cuti_model.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class _CutiPage extends State<CutiPage> {
 appBar: AppBar(
   title: Text("Pengajuan Cuti"),
 ),
-      body: FormCuti(),
+
     );
   }
 }
