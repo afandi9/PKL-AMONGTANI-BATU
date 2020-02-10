@@ -1,4 +1,4 @@
-import 'package:among_tani/fragmentPage/inbox_detail.dart';
+import 'package:among_tani/detailPage/inbox_detail.dart';
 import 'package:among_tani/model/inbox_model.dart';
 import 'package:flutter/material.dart';
 

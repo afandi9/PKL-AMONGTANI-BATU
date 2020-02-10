@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DetailTracking extends StatelessWidget {
+class DetailKenaikanPangkat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class DetailTracking extends StatelessWidget {
                       child: IconButton(icon: Icon(Icons.arrow_back),onPressed: () => Navigator.pop(context, false),alignment: Alignment.centerLeft,color: Colors.green[700],),
                     ),
                     Expanded(
-                      child: Text("Detail Tracking",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.left,),
+                      child: Text("DAFTAR PENGAJUAN KENAIKAN PANGKAT",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.left,),
                     ),
                   ],
                 ),

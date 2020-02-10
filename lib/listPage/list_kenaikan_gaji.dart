@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DetailCuti extends StatelessWidget {
+class DetailKenaikanGaji extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class DetailCuti extends StatelessWidget {
                       child: IconButton(icon: Icon(Icons.arrow_back),onPressed: () => Navigator.pop(context, false),alignment: Alignment.centerLeft,color: Colors.green[700],),
                     ),
                     Expanded(
-                      child: Text("Detail Cuti",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.left,),
+                      child: Text("DAFTAR PENGAJUAN KENAIKAN GAJI",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green[700]),textAlign: TextAlign.left,),
                     ),
                   ],
                 ),

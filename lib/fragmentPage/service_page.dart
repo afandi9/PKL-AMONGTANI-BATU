@@ -1,7 +1,7 @@
-import 'package:among_tani/detailPage/detail_cuti.dart';
-import 'package:among_tani/detailPage/detail_kenaikan_gaji.dart';
-import 'package:among_tani/detailPage/detail_kenaikan_pangkat.dart';
-import 'package:among_tani/detailPage/detail_tracking.dart';
+import 'package:among_tani/listPage/list_cuti.dart';
+import 'package:among_tani/listPage/list_kenaikan_gaji.dart';
+import 'package:among_tani/listPage/list_kenaikan_pangkat.dart';
+import 'package:among_tani/listPage/list_tracking.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -122,7 +122,7 @@ class _ServicePage extends State<ServicePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             new Icon(Icons.navigation,size: 60,color: Colors.white,),
-                            new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                            new Text("Tracking Proses", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
                           ],
                         ),
                       ),
