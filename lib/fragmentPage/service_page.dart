@@ -1,4 +1,5 @@
 import 'package:among_tani/cuti_page.dart';
+import 'package:among_tani/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,13 +39,23 @@ class _ServicePage extends State<ServicePage> {
               padding: const EdgeInsets.all(8),
               color: Colors.green.shade400,
               child: new Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.flight_takeoff,size: 60,color: Colors.white,),
-                  new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
-                  ],
+                new InkWell(
+                  onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                  child: Container(height: 80,width: 120,
+                    child: new Column(
+                      children: <Widget>[
+                    new Icon(Icons.flight_takeoff,size: 60,color: Colors.white,),
+                    new Text("Pengajuan Cuti", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                ],
+                    ),
+                  ),
+                ),
+                ],
               ),
             ),
+
 
             Container(
               padding: const EdgeInsets.all(8),
@@ -52,9 +63,17 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.accessibility_new,size: 60,color: Colors.white,),
-
-                  new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                  new InkWell(
+                    onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                    child: Container(height: 80,width: 120,
+                      child: new Column(
+                        children: <Widget>[
+                          new Icon(Icons.accessibility_new,size: 60,color: Colors.white,),
+                          new Text("Kenaikan Pangkat", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -64,9 +83,17 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.trending_up,size: 60,color: Colors.white,),
-
-                  new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                  new InkWell(
+                    onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                    child: Container(height: 80,width: 120,
+                      child: new Column(
+                        children: <Widget>[
+                          new Icon(Icons.trending_up,size: 60,color: Colors.white,),
+                          new Text("Kenaikan Gaji", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -76,8 +103,17 @@ class _ServicePage extends State<ServicePage> {
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new Icon(Icons.navigation,size: 60,color: Colors.white,),
-                  new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                  new InkWell(
+                    onTap: ()=>(Navigator.of(context).pushNamed(LoginPage.tag)),
+                    child: Container(height: 80,width: 120,
+                      child: new Column(
+                        children: <Widget>[
+                          new Icon(Icons.navigation,size: 60,color: Colors.white,),
+                          new Text("Tracking Process", style: TextStyle(color: Colors.white,fontSize: 15,),textAlign: TextAlign.center,),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
