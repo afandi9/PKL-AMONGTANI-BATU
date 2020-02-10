@@ -12,6 +12,7 @@ class InboxDetail extends StatelessWidget{
     Widget setButton(bool setBool){
       if (setBool == true){
         return RaisedButton(
+          onPressed: null,
           color: Colors.teal[700],
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -76,6 +77,7 @@ class InboxDetail extends StatelessWidget{
             child: Column(
               children: <Widget>[
                 Container(
+                  width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       border: new Border.all(
