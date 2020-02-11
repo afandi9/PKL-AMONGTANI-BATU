@@ -2,7 +2,6 @@ import 'package:among_tani/listPage/list_cuti.dart';
 import 'package:among_tani/listPage/list_kenaikan_gaji.dart';
 import 'package:among_tani/listPage/list_kenaikan_pangkat.dart';
 import 'package:among_tani/listPage/list_tracking.dart';
-import 'package:among_tani/model/web_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -124,7 +123,7 @@ class _ServicePage extends State<ServicePage> {
                         child: new InkWell(
                           onTap: () => (Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => Web_Service()))),
+                                  builder: (context) => DetailKenaikanGaji()))),
                           child: Container(
                             height: 80,
                             width: 120,

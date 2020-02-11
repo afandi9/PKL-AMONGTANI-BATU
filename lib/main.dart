@@ -1,6 +1,6 @@
 import 'package:among_tani/fragmentPage/inbox_page.dart';
 import 'package:among_tani/fragmentPage/service_page.dart';
-import 'package:among_tani/model/web_service.dart';
+import 'package:among_tani/detailPage/webview.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'home_page.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     HomePage.tag: (context) => HomePage(),
     ServicePage.tag: (context) => ServicePage(),
     InboxPage.tag: (context) => InboxPage(),
-    Web_Service.tag: (context) => Web_Service(),
+    Web_View_Service.tag: (context) => Web_View_Service(),
 };
   @override
   Widget build(BuildContext context) {
