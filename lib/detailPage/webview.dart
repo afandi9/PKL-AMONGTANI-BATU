@@ -6,17 +6,17 @@ import 'package:webview_flutter/webview_flutter.dart';
 void main() {
   runApp(new MaterialApp(
     title: "Web-View",
-    home: new Web_View_Service(),
+    home: new WebView_Service(),
   ));
 }
 
-class Web_View_Service extends StatefulWidget {
+class WebView_Service extends StatefulWidget {
   static String tag = 'webview service';
 
   _Web_View createState() => new _Web_View();
 }
 
-class _Web_View extends State<Web_View_Service>{
+class _Web_View extends State<WebView_Service>{
   Completer<WebViewController> _controller = Completer<WebViewController>();
 
   @override

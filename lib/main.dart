@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     HomePage.tag: (context) => HomePage(),
     ServicePage.tag: (context) => ServicePage(),
     InboxPage.tag: (context) => InboxPage(),
-    Web_View_Service.tag: (context) => Web_View_Service(),
+    WebView_Service.tag: (context) => WebView_Service(),
 };
   @override
   Widget build(BuildContext context) {

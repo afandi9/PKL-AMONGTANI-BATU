@@ -1,4 +1,7 @@
+import 'package:among_tani/detailPage/kepegawaian_detail.dart';
+import 'package:among_tani/detailPage/webview.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeFragment extends StatefulWidget {
   static String tag = 'home_fragment';
@@ -47,7 +50,7 @@ class _HomeFragment extends State<HomeFragment> {
                             children: <Widget>[
                               Expanded(
                                 child: new InkWell(
-                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeFragment()))),
+//                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Web_View_Service()))),
                                   child: Container(height: 80,width: 120,
                                     child: new Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +98,7 @@ class _HomeFragment extends State<HomeFragment> {
                             children: <Widget>[
                               Expanded(
                                 child: new InkWell(
-//                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailKenaikanGaji()))),
+                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>KepegawaianDetail()))),
                                   child: Container(height: 80,width: 120,
                                     child: new Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +121,7 @@ class _HomeFragment extends State<HomeFragment> {
                             children: <Widget>[
                               Expanded(
                                 child: new InkWell(
-//                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailTracking()))),
+                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WebView_Service()))),
                                   child: Container(height: 80,width: 120,
                                     child: new Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
