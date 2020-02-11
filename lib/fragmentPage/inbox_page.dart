@@ -48,6 +48,7 @@ class _InboxPage extends State<InboxPage> {
       onTap: (){
         Navigator.push(context, MaterialPageRoute(
           builder: (context) => InboxDetail(inbox: inbox)
+//          builder: (context) => KepegawaianDetail()
         ));
       },
     );

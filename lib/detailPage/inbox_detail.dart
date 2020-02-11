@@ -52,7 +52,6 @@ class InboxDetail extends StatelessWidget{
               child: Container(
                 margin: EdgeInsets.fromLTRB(10, 25, 10, 0),
                 child: Row(
-//                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
@@ -86,14 +85,6 @@ class InboxDetail extends StatelessWidget{
                   ),
                   child: Text(inbox.content,textAlign: TextAlign.justify,),),
                 setButton(buttonDown),
-//                RaisedButton(
-//                  onPressed: null,
-//                  color: Colors.teal[700],
-//                  shape: RoundedRectangleBorder(
-//                    borderRadius: BorderRadius.circular(3),
-//                  ),
-//                  child: Text('Download',style: TextStyle(color: Colors.white),),
-//                ),
               ],
             ),
           ),
