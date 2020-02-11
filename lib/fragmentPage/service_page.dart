@@ -1,3 +1,4 @@
+import 'package:among_tani/fragmentPage/home_fragment.dart';
 import 'package:among_tani/listPage/list_cuti.dart';
 import 'package:among_tani/listPage/list_kenaikan_gaji.dart';
 import 'package:among_tani/listPage/list_kenaikan_pangkat.dart';
@@ -45,7 +46,7 @@ class _ServicePage extends State<ServicePage> {
                 children: <Widget>[
                   Expanded(
                     child: new InkWell(
-                      onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailCuti()))),
+                      onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeFragment()))),
                       child: Container(height: 80,width: 120,
                         child: new Column(
                           mainAxisAlignment: MainAxisAlignment.center,

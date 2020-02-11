@@ -18,6 +18,7 @@ flutter:
 
   assets:
   - assets/logo.png
+  - assets/batu7.JPG
 
 fonts:
   - family: Nunito
