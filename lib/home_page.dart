@@ -97,12 +97,13 @@ class _BottomNavPageState extends State{
       BottomNavigationBarItem(
           icon: Icon(Icons.mail_outline),
           title: Text('Inbox')
-      ),
+        ),
       BottomNavigationBarItem(
         icon: Icon(Icons.dvr),
-        title: Text('Layanan'),
+          title:  Text('Layanan')
       ),
     ];
+
 
     final _bottomNavBar = BottomNavigationBar(
       items: _bottomNavBarItems,
