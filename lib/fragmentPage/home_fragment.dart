@@ -163,7 +163,7 @@ class _HomeFragment extends State<HomeFragment> {
                               ),
                               new Expanded(
                                 child: new Padding(
-                                  padding: const EdgeInsets.only(left: 8.0,bottom: 5.0),
+                                  padding: const EdgeInsets.fromLTRB(8,5,0,5),
                                   child: new Text('Nama : Imam Haris Afandi\n\n'+'NIP     : 12345678'),
                                 ),
                               ),

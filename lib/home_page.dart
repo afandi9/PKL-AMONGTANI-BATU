@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:among_tani/fragmentPage/home_fragment.dart';
 import 'package:among_tani/fragmentPage/inbox_page.dart';
+import 'package:among_tani/listPage/list_cuti.dart';
+import 'package:among_tani/listPage/list_kenaikan_gaji.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/fragmentPage/service_page.dart';
 
@@ -17,6 +19,7 @@ class HomePage extends StatefulWidget {
   @override
   _BottomNavPageState createState() => _BottomNavPageState();
 }
+
 
 class _BottomNavPageState extends State {
   Future<bool> _onWillPop() {
@@ -138,7 +141,27 @@ class _BottomNavPageState extends State {
                         ),
                       ),
                       Expanded(
-                        child: Icon(Icons.home, color: Colors.transparent),
+                        child: PopupMenuButton<int>(
+                          icon: Icon(Icons.more_vert, color: Colors.green[700],),
+                          padding: EdgeInsets.only(left: 80),
+                          onSelected: (int results) {
+                            if (results == 1){
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) => DetailCuti()
+                                ));
+                            }
+                            if (results == 2){
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) => DetailKenaikanGaji()
+                              ));
+                            }
+                          },
+                          itemBuilder: (context) => [
+                            PopupMenuItem(value: 1, child: Text('Tentang'),),
+                            PopupMenuItem(value: 2, child: Text('Logout'),)
+                          ],
+                        ),
+//                        child: Icon(Icons.home, color: Colors.transparent),
                       ),
                     ],
                   ),
