@@ -1,7 +1,6 @@
 import 'package:among_tani/detailPage/kepegawaian_detail.dart';
 import 'package:among_tani/detailPage/webview.dart';
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeFragment extends StatefulWidget {
   static String tag = 'home_fragment';
@@ -177,27 +176,15 @@ class _HomeFragment extends State<HomeFragment> {
                   ),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(140, 140, 140, 0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  CircleAvatar(
-                                    radius: 40,
-                                    child: Image.asset('assets/logo.png',alignment: Alignment.center,),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(top: 140),
+                child: Center(
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.green,
+                      child: Image.asset('assets/logo.png',alignment: Alignment.center,),
+                    ),
+                 ),
               ),
             ],
           ),
