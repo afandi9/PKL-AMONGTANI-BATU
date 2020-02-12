@@ -1,8 +1,8 @@
 import 'dart:io';
+import 'package:among_tani/about_page.dart';
 import 'package:among_tani/fragmentPage/home_fragment.dart';
 import 'package:among_tani/fragmentPage/inbox_page.dart';
-import 'package:among_tani/listPage/list_cuti.dart';
-import 'package:among_tani/listPage/list_kenaikan_gaji.dart';
+import 'package:among_tani/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/fragmentPage/service_page.dart';
 
@@ -147,12 +147,12 @@ class _BottomNavPageState extends State {
                           onSelected: (int results) {
                             if (results == 1){
                                 Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) => DetailCuti()
+                                  builder: (BuildContext context) => AboutPage()
                                 ));
                             }
                             if (results == 2){
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) => DetailKenaikanGaji()
+                                  builder: (BuildContext context) => LoginPage()
                               ));
                             }
                           },
