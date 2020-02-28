@@ -1,13 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:among_tani/contracts/login_contract.dart';
+import 'package:among_tani/presenters/login_presenter.dart';
+import 'package:toast/toast.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
+
   @override
   _LoginPageState createState() => new _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> implements LoginView{
+  LoginPresenter presenter;
+  TextEditingController usernameCont = TextEditingController();
+  TextEditingController passCont = TextEditingController();
+
+  @override
+  void initState(){
+    super.initState();
+    presenter = LoginPresenter(this);
+  }
+
+  void doLogin(String username, String password){
+    presenter.login(username, password);
+  }
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -20,7 +38,8 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     final email = TextFormField(
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.number,
+      controller: usernameCont,
       autofocus: false,
       cursorColor: Colors.green,
       decoration: InputDecoration(
@@ -32,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
 
     final password = TextFormField(
       autofocus: false,
+      controller: passCont,
       obscureText: true,
       cursorColor: Colors.green,
       decoration: InputDecoration(
@@ -48,7 +68,13 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(3),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(HomePage.tag);
+//          Map<String,dynamic> body ={
+//            'username' : usernameCont.text.trim(),
+//            'password' : passCont.text.trim(),
+//            'appversion' : '1803'
+//          };
+          doLogin(usernameCont.text.trim(), passCont.text.trim());
+//          Navigator.of(context).pushNamed(HomePage.tag);
         },
         padding: EdgeInsets.all(12),
         color: Colors.teal[700],
@@ -86,4 +112,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  @override
+  void finish() =>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+
+  @override
+  void toast(String message) => Toast.show(message, context, duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+
 }

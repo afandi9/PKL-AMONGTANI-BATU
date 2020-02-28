@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -26,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       fontFamily: 'Nunito',
       ),
-      home: LoginPage(),
+      home: HomePage(),
       routes: routes,
     );
   }

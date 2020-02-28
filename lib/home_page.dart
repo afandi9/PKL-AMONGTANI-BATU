@@ -1,10 +1,15 @@
 import 'dart:io';
 import 'package:among_tani/about_page.dart';
+import 'package:among_tani/contracts/home_contarct.dart';
 import 'package:among_tani/fragmentPage/home_fragment.dart';
 import 'package:among_tani/fragmentPage/inbox_page.dart';
 import 'package:among_tani/login_page.dart';
+import 'package:among_tani/presenters/home_presenter.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/fragmentPage/service_page.dart';
+import 'package:among_tani/model/post.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:toast/toast.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -21,7 +26,36 @@ class HomePage extends StatefulWidget {
 }
 
 
-class _BottomNavPageState extends State {
+class _BottomNavPageState extends State<HomePage> implements HomeView {
+  HomePresenter presenter;
+  List<Post> posts = new List();
+
+  @override
+  void initState() {
+      isNotLoggedIn().then((it){
+        if(it){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+        }
+        return;
+      });
+      presenter = HomePresenter(this);
+      super.initState();
+  }
+
+  Future<bool> isNotLoggedIn() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String token = (prefs.getString('token')??"undefined");
+    return (token == null || token == "undefined");
+  }
+
+  void _logout() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+  }
+
+  @override
+  void toast(String message) => Toast.show(message, context);
+
   Future<bool> _onWillPop() {
     return showDialog(
           context: context,
@@ -151,9 +185,10 @@ class _BottomNavPageState extends State {
                                 ));
                             }
                             if (results == 2){
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) => LoginPage()
-                              ));
+                                _logout();
+//                              Navigator.of(context).push(MaterialPageRoute(
+//                                  builder: (BuildContext context) => LoginPage()
+//                              ));
                             }
                           },
                           itemBuilder: (context) => [
