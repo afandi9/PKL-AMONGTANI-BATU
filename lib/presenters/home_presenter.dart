@@ -1,3 +1,4 @@
+import 'package:among_tani/model/user.dart';
 import 'package:among_tani/contracts/home_contarct.dart';
 import 'package:among_tani/model/post.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -8,12 +9,20 @@ class HomePresenter implements HomeInteractor{
   HomeView view;
   HomePresenter(this.view);
   RestClient api = RestClient(Dio());
-
+  User u;
   Future<String> getToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String token = (prefs.getString('token')??"undefined");
     return token;
   }
+
+//  @override
+//  Future<User> load() async {
+////    String jsonString = await rootBundle.loadString(json.decode(u));
+////    final jsonData = json.decode(jsonString);
+////    User user = User.fromJson(jsonData);
+//    print(u);
+//  }
 
   @override
   Future<List<Post>> all() async {

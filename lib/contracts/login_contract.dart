@@ -1,6 +1,6 @@
 class LoginInteractor {
   void login(String username, String password){}
-  void succes(String token){}
+  void succes(String token, Map<String, dynamic> user){}
   void destroy(){}
 }
 

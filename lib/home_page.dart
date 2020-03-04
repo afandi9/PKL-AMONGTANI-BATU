@@ -186,6 +186,7 @@ class _BottomNavPageState extends State<HomePage> implements HomeView {
                             }
                             if (results == 2){
                                 _logout();
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => LoginPage()), (r) =>false);
 //                              Navigator.of(context).push(MaterialPageRoute(
 //                                  builder: (BuildContext context) => LoginPage()
 //                              ));

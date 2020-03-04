@@ -1,8 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:among_tani/model/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
-class KepegawaianDetail extends StatelessWidget {
+class KepegawaianDetail extends StatefulWidget {
+  @override
+  _KepDetail createState() => new _KepDetail();
+}
+class _KepDetail extends State<KepegawaianDetail> {
+  User userLoad = User();
+  @override
+  void initState() {
+    loadSP();
+    super.initState();
+  }
 
+  loadSP() async{
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      User user = User.fromJson(await json.decode(prefs.getString("user")));
+      setState(() {
+        userLoad = user;
+      });
+    }catch(Exeption){
+
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,13 +126,13 @@ class KepegawaianDetail extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(
-                                        'Imam Haris Afandi',
+                                        userLoad.nama_pegawai,
                                         style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        'NIP: 12345678',
+                                        'NIP: '+userLoad.nip,
                                         textAlign: TextAlign.left,
                                       )
                                     ],
@@ -139,7 +163,7 @@ class KepegawaianDetail extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Jember, 28-03-1998',
+                                        userLoad.tgl_lahir,
                                       )
                                     ],
                                   ),
@@ -169,7 +193,7 @@ class KepegawaianDetail extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Mahasiswa Magang',
+                                        userLoad.jabatan,
                                       )
                                     ],
                                   ),
@@ -199,7 +223,7 @@ class KepegawaianDetail extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Mahasiswa Magang',
+                                        userLoad.pangkat_akhir+' / '+userLoad.gol_akhir,
                                       )
                                     ],
                                   ),

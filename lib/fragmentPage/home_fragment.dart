@@ -1,6 +1,9 @@
+import 'dart:convert';
 import 'package:among_tani/detailPage/kepegawaian_detail.dart';
 import 'package:among_tani/detailPage/webview.dart';
 import 'package:flutter/material.dart';
+import 'package:among_tani/model/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeFragment extends StatefulWidget {
   static String tag = 'home_fragment';
@@ -10,6 +13,25 @@ class HomeFragment extends StatefulWidget {
 }
 
 class _HomeFragment extends State<HomeFragment> {
+  User userLoad = User();
+  @override
+  void initState() {
+    loadSP();
+    super.initState();
+  }
+
+    loadSP() async{
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      User user = User.fromJson(await json.decode(prefs.getString("user")));
+      setState(() {
+        userLoad = user;
+      });
+    }catch(Exeption){
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,7 +172,7 @@ class _HomeFragment extends State<HomeFragment> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(19.0),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 25,top: 30),
+                      padding: const EdgeInsets.only(left: 15,top: 30),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,7 +186,10 @@ class _HomeFragment extends State<HomeFragment> {
                               new Expanded(
                                 child: new Padding(
                                   padding: const EdgeInsets.fromLTRB(8,5,0,5),
-                                  child: new Text('Nama : Imam Haris Afandi\n\n'+'NIP     : 12345678'),
+                                  child: new Text(
+                                    'Nama : '+userLoad.nama_pegawai+
+                                        '\n\n'+'NIP     : '+userLoad.nip
+                                    ,style: TextStyle(fontSize: 12),),
                                 ),
                               ),
 

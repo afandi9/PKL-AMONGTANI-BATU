@@ -1,10 +1,11 @@
+import 'dart:convert';
+
 import 'package:among_tani/model/user.dart';
 import 'package:among_tani/contracts/login_contract.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:among_tani/webservices/api_service.dart';
 import 'package:dio/dio.dart';
-
 
 class LoginPresenter implements LoginInteractor{
   LoginView view;
@@ -14,9 +15,10 @@ class LoginPresenter implements LoginInteractor{
   final String absensiapikey = "60c40c20a9049a5916b5bf3a20000007";
   final int appversion = 1803;
   @override
-  void succes(String token) async{
+  void succes(String token, Map<String, dynamic> user) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString("token", token);
+    await prefs.setString("user", json.encode(user));
   }
 
   @override
@@ -27,7 +29,7 @@ class LoginPresenter implements LoginInteractor{
     await api.login(absensiapikey, username, password, appversion).then((it){
       if(it.status == true){
         User u = User.fromJson(it.data);
-        this.succes(u.token);
+        this.succes(u.token, it.data);
         view.toast(it.message);
         view?.finish();
       }else{

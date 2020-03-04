@@ -44,49 +44,6 @@ class _RestClient implements RestClient {
   }
 
   @override
-  register(name, email, password) async {
-    ArgumentError.checkNotNull(name, 'name');
-    ArgumentError.checkNotNull(email, 'email');
-    ArgumentError.checkNotNull(password, 'password');
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _data = {'name': name, 'email': email, 'password': password};
-    final Response<Map<String, dynamic>> _result = await _dio.request(
-        'register',
-        queryParameters: queryParameters,
-        options: RequestOptions(
-            method: 'POST',
-            headers: <String, dynamic>{},
-            extra: _extra,
-            contentType: 'application/x-www-form-urlencoded',
-            baseUrl: baseUrl),
-        data: _data);
-    final value = WrappedResponse.fromJson(_result.data);
-    return Future.value(value);
-  }
-
-  @override
-  create(token, title, content) async {
-    ArgumentError.checkNotNull(token, 'token');
-    ArgumentError.checkNotNull(title, 'title');
-    ArgumentError.checkNotNull(content, 'content');
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _data = {'title': title, 'content': content};
-    final Response<Map<String, dynamic>> _result = await _dio.request('post',
-        queryParameters: queryParameters,
-        options: RequestOptions(
-            method: 'POST',
-            headers: <String, dynamic>{'Authorization': token},
-            extra: _extra,
-            contentType: 'application/x-www-form-urlencoded',
-            baseUrl: baseUrl),
-        data: _data);
-    final value = WrappedResponse.fromJson(_result.data);
-    return Future.value(value);
-  }
-
-  @override
   all(token) async {
     ArgumentError.checkNotNull(token, 'token');
     const _extra = <String, dynamic>{};
