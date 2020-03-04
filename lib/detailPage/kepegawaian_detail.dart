@@ -1,3 +1,4 @@
+import 'package:among_tani/data_detail_kepegawaian/detail_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:among_tani/model/user.dart';
@@ -243,7 +244,9 @@ class _KepDetail extends State<KepegawaianDetail> {
                             child: Row(
                               children: <Widget>[
                                 Expanded(
-                                  child: Column(
+                                  child: new InkWell(
+                                    onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>(detailData())))),
+                                    child: Column(
                                     children: <Widget>[
                                       Container(
                                         padding: EdgeInsets.only(bottom: 5),
@@ -256,6 +259,7 @@ class _KepDetail extends State<KepegawaianDetail> {
                                       Text('Data')
                                     ],
                                   ),
+                                ),
                                 ),
                                 Expanded(
                                   child: Column(
