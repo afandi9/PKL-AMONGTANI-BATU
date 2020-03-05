@@ -63,6 +63,7 @@ class _InboxPage extends State<InboxPage> {
     );
 
     final makeBody = Container(
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.bottomRight,

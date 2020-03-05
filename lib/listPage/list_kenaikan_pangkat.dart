@@ -50,7 +50,12 @@ class DetailKenaikanPangkat extends StatelessWidget {
         ),
       ),
       body: Container(
-        color: Colors.grey[300],
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.greenAccent, Colors.white])),
+//        color: Colors.grey[300],
         child: Column(
           children: <Widget>[
             Container(
@@ -290,6 +295,11 @@ class DetailKenaikanPangkat extends StatelessWidget {
               ),
             ),
             Container(
+              decoration: BoxDecoration(
+                  border: new Border.all(
+                    width: 1.0, color: Colors.green[700],
+                  )
+              ),
               child: Material(
                 color: Colors.white70,
                 child: Row(
