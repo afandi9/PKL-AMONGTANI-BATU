@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:among_tani/about_page.dart';
-import 'package:among_tani/contracts/home_contarct.dart';
+import 'package:among_tani/contracts/home_contract.dart';
 import 'package:among_tani/fragmentPage/home_fragment.dart';
 import 'package:among_tani/fragmentPage/inbox_page.dart';
 import 'package:among_tani/login_page.dart';

@@ -7,3 +7,4 @@ class HomeInteractor{
 class HomeView{
   void toast(String message){}
 }
+

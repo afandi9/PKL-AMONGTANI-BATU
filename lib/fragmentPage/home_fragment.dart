@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:among_tani/detailPage/aktivitas_detail.dart';
 import 'package:among_tani/detailPage/kepegawaian_detail.dart';
 import 'package:among_tani/detailPage/webview.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +72,7 @@ class _HomeFragment extends State<HomeFragment> {
                             children: <Widget>[
                               Expanded(
                                 child: new InkWell(
-//                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Web_View_Service()))),
+                                  onTap: ()=>(Navigator.of(context).push(MaterialPageRoute(builder: (context)=>detailAktivitas()))),
                                   child: Container(height: 80,width: 120,
                                     child: new Column(
                                       mainAxisAlignment: MainAxisAlignment.center,

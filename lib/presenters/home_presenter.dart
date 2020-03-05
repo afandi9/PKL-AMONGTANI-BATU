@@ -1,5 +1,5 @@
 import 'package:among_tani/model/user.dart';
-import 'package:among_tani/contracts/home_contarct.dart';
+import 'package:among_tani/contracts/home_contract.dart';
 import 'package:among_tani/model/post.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
@@ -15,7 +15,6 @@ class HomePresenter implements HomeInteractor{
     String token = (prefs.getString('token')??"undefined");
     return token;
   }
-
 //  @override
 //  Future<User> load() async {
 ////    String jsonString = await rootBundle.loadString(json.decode(u));
