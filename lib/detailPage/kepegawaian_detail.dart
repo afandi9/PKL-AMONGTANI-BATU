@@ -127,13 +127,13 @@ class _KepDetail extends State<KepegawaianDetail> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(
-                                        userLoad.nama_pegawai,
+                                        userLoad.nama_pegawai??'default value',
                                         style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        'NIP: '+userLoad.nip,
+                                        'NIP: '+userLoad.nip??'default value',
                                         textAlign: TextAlign.left,
                                       )
                                     ],
@@ -164,7 +164,7 @@ class _KepDetail extends State<KepegawaianDetail> {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        userLoad.tgl_lahir,
+                                        userLoad.tempat_lahir+', '+userLoad.tgl_lahir??'default value',
                                       )
                                     ],
                                   ),
@@ -194,7 +194,7 @@ class _KepDetail extends State<KepegawaianDetail> {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        userLoad.jabatan,
+                                        userLoad.jabatan??'default value',
                                       )
                                     ],
                                   ),
@@ -224,7 +224,7 @@ class _KepDetail extends State<KepegawaianDetail> {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        userLoad.pangkat_akhir+' / '+userLoad.gol_akhir,
+                                        userLoad.pangkat_akhir+' ('+userLoad.gol_akhir+')'??'default value',
                                       )
                                     ],
                                   ),
