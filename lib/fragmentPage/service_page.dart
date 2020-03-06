@@ -1,43 +1,31 @@
-
-
 import 'package:among_tani/listPage/list_cuti.dart';
 import 'package:among_tani/listPage/list_kenaikan_gaji.dart';
 import 'package:among_tani/listPage/list_kenaikan_pangkat.dart';
 import 'package:among_tani/listPage/list_tracking.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
-
-  @override
-  _ServicePage createState() => _ServicePage();
-}
-
-class _ServicePage extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ServicePage(),
-    );
-  }
+void main() {
+  runApp(new MaterialApp(
+    title: "vavd",
+    home: new ServicePage(),
+  ));
 }
 
 // ignore: must_be_immutable
-class ServicePage extends StatelessWidget {
+class ServicePage extends StatefulWidget {
   static String tag = 'ini layanan';
+
+  @override
+  _ServicePage createState() => new _ServicePage();
+}
+
+class _ServicePage extends State<ServicePage> {
   Size size;
 
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
+    return Scaffold(
         body: Stack(
           children: <Widget>[
             Container(
@@ -65,8 +53,7 @@ class ServicePage extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget createGridItem(int position) {
@@ -100,8 +87,7 @@ class ServicePage extends StatelessWidget {
 
     return Builder(builder: (context) {
       return Padding(
-        padding:
-        const EdgeInsets.only(left: 5, right: 5, bottom: 5, top: 5),
+        padding: const EdgeInsets.only(left: 5, right: 5, bottom: 5, top: 5),
         child: Card(
           elevation: 10,
           color: color,
@@ -111,8 +97,31 @@ class ServicePage extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
-              Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text("Selected Item $position")));
+              if (position == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailCuti()),
+                );
+              }
+              if (position == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailKenaikanPangkat()),
+                );
+              }
+              if (position == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailKenaikanGaji()),
+                );
+              }
+              if (position == 3) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailTracking()),
+                );
+              }
             },
             child: Center(
               child: Column(
@@ -125,7 +134,10 @@ class ServicePage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(text,style: TextStyle(color: Colors.white),),
+                    child: Text(
+                      text,
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ],
               ),
@@ -136,6 +148,8 @@ class ServicePage extends StatelessWidget {
     });
   }
 }
+
+
 
 class ShapesPainter extends CustomPainter {
   @override
