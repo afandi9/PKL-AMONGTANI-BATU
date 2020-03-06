@@ -97,6 +97,7 @@ class _LoginPageState extends State<LoginPage> implements LoginView{
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 40.0, right: 40.0),
           children: <Widget>[
+
             logo,
             SizedBox(height: 12.0),
             Text('AMONG ABDI PRAJA\nKOTA BATU', style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.green[700]),textAlign: TextAlign.center,),
